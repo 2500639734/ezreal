@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>ezreal_db</title>
+    <!-- css -->
+    <link rel="stylesheet" href="/plugin/layui/css/layui.css">
+</head>
+<form id="ezreal_db_edit_form" class="layui-form " action="" lay-filter="ezreal_db_edit_form">
+    <input type="hidden" name="id" >
+    <div class="layui-form-item">
+        <label class="layui-form-label">名称</label>
+        <div class="layui-input-inline">
+            <input type="text" name="name" required  lay-verify="required" placeholder="请输入名称" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">数据库名称</label>
+        <div class="layui-input-inline">
+            <input type="text" name="dbName" required  lay-verify="required" placeholder="请输入数据库名称" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">数据库IP</label>
+        <div class="layui-input-inline">
+            <input type="text" name="dbHost" required  lay-verify="required" placeholder="请输入数据库IP" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">数据库端口</label>
+        <div class="layui-input-inline">
+            <input type="text" name="dbPort" required  lay-verify="number" placeholder="请输入数据库端口" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">数据库类型</label>
+        <div class="layui-input-inline">
+            <select id="dbType" name="typeId" showText="typeName" required lay-verify="required" placeholder="请选择数据库类型" lay-search></select>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">用户名</label>
+        <div class="layui-input-inline">
+            <input type="text" name="username" required  lay-verify="required" placeholder="请输入用户名" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <label class="layui-form-label">密码</label>
+        <div class="layui-input-inline">
+            <input type="password" name="password" required  lay-verify="required" placeholder="请输入密码" autocomplete="off" class="layui-input">
+        </div>
+    </div>
+    <div class="layui-form-item layui-form-text">
+        <label class="layui-form-label">备注</label>
+        <div class="layui-input-block">
+            <textarea name="remark" placeholder="请输入备注" class="layui-textarea"></textarea>
+        </div>
+    </div>
+    <div class="layui-form-item">
+        <div class="layui-input-block">
+            <button class="layui-btn" lay-submit lay-filter="ezreal_db_edit_submit">提交</button>
+            <button type="reset" class="layui-btn layui-btn-primary">重置</button>
+        </div>
+    </div>
+</form>
+<body>
+<table id="ezreal_db_table" lay-filter="ezreal_db_table"></table>
+<script src="/plugin/jquery-1.8.3/jquery.min.js" ></script>
+<script src="/plugin/layui/layui.js" ></script>
+<script src="/common/FormUtil.js"></script>
+<script src="/config/ezreal_db_edit.js"></script>
+</body>
+</html>

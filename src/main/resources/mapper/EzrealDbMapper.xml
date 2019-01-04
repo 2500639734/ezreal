@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ezreal.mapper.EzrealDbMapper">
+
+    <resultMap type="com.ezreal.pojo.vo.EzrealDbVo" id="result_column">
+        <id column="id" property="id" jdbcType="INTEGER"></id>
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="type_name" property="typeName" jdbcType="VARCHAR"/>
+        <result column="db_name" property="dbName" jdbcType="VARCHAR"/>
+        <result column="db_host" property="dbHost" jdbcType="VARCHAR"/>
+        <result column="db_port" property="dbPort" jdbcType="VARCHAR"/>
+        <result column="username" property="username" jdbcType="VARCHAR"/>
+        <result column="password" property="password" jdbcType="VARCHAR"/>
+        <result column="create_time" property="createTime" jdbcType="TIMESTAMP"/>
+        <result column="update_time" property="updateTime" jdbcType="TIMESTAMP"/>
+        <result column="create_user_id" property="createUserId" jdbcType="INTEGER"/>
+        <result column="update_user_id" property="updateUserId" jdbcType="INTEGER"/>
+        <result column="is_valid" property="isValid" jdbcType="BOOLEAN"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="select_column">
+        a.id as id, a.name as name, b.name as type_name, b.id as typeId, a.db_name as db_name, a.db_host as db_host, a.db_port as db_port,
+        a.username as username, a.password as password, a.create_time as create_time, a.update_time as update_time,
+        a.create_user_id as create_user_id, a.update_user_id as update_user_id, a.is_valid as is_valid, a.remark as remark
+    </sql>
+
+    <select id="findList" resultMap="result_column">
+       select <include refid="select_column"></include>
+       from ezreal_db as a, ezreal_classify as b
+       where a.is_valid = 1 and b.is_valid = 1
+       <if test="search != null and search != ''">
+           and a.name like concat('%',#{search},'%')
+       </if>
+       and a.type_id = b.id order by a.id asc
+    </select>
+
+    <select id="findById" resultType="com.ezreal.pojo.vo.EzrealDbVo">
+        select <include refid="select_column"></include>
+        from ezreal_db as a, ezreal_classify as b
+        where a.is_valid = 1 and b.is_valid = 1
+        and a.type_id = b.id and a.id = #{id}
+    </select>
+
+</mapper>

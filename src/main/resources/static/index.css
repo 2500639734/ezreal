@@ -1,0 +1,39 @@
+/*设置logo字体颜色*/
+#logo {
+    color: #fff;
+}
+/*设置主题选择器边框背景颜色*/
+#theme_color_selector {
+    background-color: #23262E;
+}
+/*设置选择器边框样式*/
+.layui-colorpicker{
+    border: 0;
+
+}
+/*取消中间内容滚动条*/
+#centen_body {
+    overflow: hidden;
+}
+/*tab页样式*/
+#tab {
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+/*tab内容页总体样式*/
+#tab_content {
+    height: 95%;
+    width: 100%;
+    margin-top: 0px;
+    padding: 0px;
+}
+/*统一设置tab页样式*/
+.layui-tab-item {
+    height: 100%;
+    width: 100%;
+    padding-top: 0px;
+    margin-bottom: 0px;
+}

@@ -1,0 +1,10 @@
+{
+  "systemThemeColorElement" : ".layui-header,.layui-side-scroll,.layui-side .layui-nav,#theme_color_selector,.layui-colorpicker-trigger-span",
+  "defaultThemeColor" : "rgba(35,38,46,1)",
+  "defaultSelect": "#ezreal_db",
+  "view": {
+    "ezreal_db": "/view/config/ezreal_db",
+    "swagger": "/swagger-ui.html",
+    "druid": "/druid"
+  }
+}
