@@ -23,6 +23,6 @@ public class ParamCheckConstant {
     public static final String DB_PASSWORD_NULL_MSG = "数据库密码不能为空";
     public static final String DB_TYPE_NULL_MSG = "数据库类型不能为空";
 
-    public static final String DB_SETTING_THEME_COLOR_NULL_MSG = "主题颜色不能为空";
+    public static final String SETTING_THEME_COLOR_NULL_MSG = "主题颜色不能为空";
 
 }

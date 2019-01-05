@@ -11,11 +11,11 @@ import java.io.Serializable;
 
 /**
  * @author: shenke
- * @date: 2018/12/31 08:49
- * @description: 系统设置实体
+ * @date: 2019/1/5 01:42
+ * @description: 菜单实体
  */
 @Data
-public class EzrealSetting extends BasePojo implements Serializable {
+public class EzrealMenu extends BasePojo implements Serializable {
 
     /**
      * 设置表主键id(自增长)
@@ -25,14 +25,18 @@ public class EzrealSetting extends BasePojo implements Serializable {
     private Integer id;
 
     /**
-     * 用户表主键id(系统同步)
+     * 父菜单id,默认0无父菜单
      */
-    private Integer userId;
+    private Integer parentId;
 
     /**
-     * 主题颜色(用户选择,一般为rgb格式,默认为rgba(35,38,46,1))
+     * 菜单名称
      */
-    @NotNull(message = ParamCheckConstant.SETTING_THEME_COLOR_NULL_MSG)
-    private String themeColor;
+    private String name;
+
+    /**
+     * 菜单路径
+     */
+    private String url;
 
 }

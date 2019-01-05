@@ -11,11 +11,11 @@ import java.io.Serializable;
 
 /**
  * @author: shenke
- * @date: 2018/12/31 08:49
- * @description: 系统设置实体
+ * @date: 2019/1/5 01:43
+ * @description: 权限实体
  */
 @Data
-public class EzrealSetting extends BasePojo implements Serializable {
+public class EzrealPermissions extends BasePojo implements Serializable {
 
     /**
      * 设置表主键id(自增长)
@@ -25,14 +25,18 @@ public class EzrealSetting extends BasePojo implements Serializable {
     private Integer id;
 
     /**
-     * 用户表主键id(系统同步)
+     * 菜单表id
      */
-    private Integer userId;
+    private Integer menuId;
 
     /**
-     * 主题颜色(用户选择,一般为rgb格式,默认为rgba(35,38,46,1))
+     * 权限名称
      */
-    @NotNull(message = ParamCheckConstant.SETTING_THEME_COLOR_NULL_MSG)
-    private String themeColor;
+    private String name;
+
+    /**
+     * 权限标记,指定角色所拥有的权限
+     */
+    private String tag;
 
 }
